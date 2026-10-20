@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Angelo Daniel Lebuna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f1ee;--card:#fff;--ink:#14141a;--mute:#6b6b78;--line:#e0dfd9;--acc:#5b4bff;--on:#fff;
+--sans:'Space Grotesk',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e13;--card:#17171f;--ink:#f1f0f6;--mute:#9a9aab;--line:#2a2a36}}
+:root[data-theme="dark"]{--bg:#0e0e13;--card:#17171f;--ink:#f1f0f6;--mute:#9a9aab;--line:#2a2a36}
+*{box-sizing:border-box}html{height:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:50}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px 90px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.brand{font:500 13px var(--mono);letter-spacing:.04em}.brand i{display:inline-block;width:9px;height:9px;border-radius:50%;background:#2ecc71;margin-right:8px;animation:p 2s infinite}
+@keyframes p{50%{opacity:.3}}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 14px;font:500 12px var(--mono)}
+.pill kbd{font:inherit;color:var(--mute);margin-left:8px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.b{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px;position:relative;overflow:hidden}
+.b::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,-50%),color-mix(in srgb,var(--acc) 16%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.b:hover::after{opacity:1}
+.hero{grid-column:span 4;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
+.lbl{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1{font-size:clamp(40px,7.5vw,84px);line-height:.95;letter-spacing:-.04em;margin:14px 0}
+h1 span{color:var(--acc)}
+.role{font:500 15px var(--mono);min-height:24px}.role::after{content:"▍";animation:p 1s infinite;color:var(--acc)}
+.clock{grid-column:span 2;background:var(--ink);color:var(--bg)}
+.clock b{display:block;font:500 clamp(30px,5vw,44px) var(--mono);margin-top:10px}
+.clock .lbl{color:inherit;opacity:.6}
+.now{grid-column:span 2}
+.now p{margin:10px 0 0;font-size:17px}
+.bar{height:6px;background:var(--line);border-radius:9px;margin-top:14px;overflow:hidden}.bar i{display:block;height:100%;width:62%;background:var(--acc);border-radius:9px;animation:g 3s ease-in-out infinite alternate}
+@keyframes g{from{width:48%}to{width:74%}}
+.sw{grid-column:span 2}.swr{display:flex;gap:10px;margin-top:12px}
+.dot{width:32px;height:32px;border-radius:50%;border:3px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+.dot.on{box-shadow:0 0 0 2px var(--ink)}
+.stat{grid-column:span 2}.stat b{font-size:46px;letter-spacing:-.04em;line-height:1}
+.stat{display:flex;flex-direction:column;justify-content:space-between}
+.go{grid-column:span 2;background:var(--acc);color:var(--on);display:flex;flex-direction:column;justify-content:space-between;min-height:130px}
+.go b{font-size:24px;line-height:1.1}.go .lbl{color:inherit;opacity:.75}
+h2{font-size:clamp(30px,5vw,48px);letter-spacing:-.03em;margin:70px 0 6px;line-height:1}
+.sub{color:var(--mute);max-width:560px;margin:0 0 22px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:7px 15px;font:500 13px var(--mono)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.proj{cursor:pointer;text-align:left;display:block;width:100%;transition:transform .25s}
+.proj:hover{transform:translateY(-4px) rotate(-.4deg)}
+.proj .no{font:500 44px var(--mono);color:var(--acc);opacity:.9}
+.proj h3{font-size:24px;margin:8px 0 4px;letter-spacing:-.02em}.proj p{color:var(--mute);margin:0 0 14px;font-size:15px}
+.tag{display:inline-block;font:500 11px var(--mono);border:1px solid var(--line);border-radius:99px;padding:3px 10px;margin:0 6px 4px 0}
+.k{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.col h4{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px;color:var(--acc)}
+.col .b{padding:16px;border-radius:20px;margin-bottom:10px;font-size:15px}.col .b small{display:block;color:var(--mute)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.sk{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:12px 18px;font-weight:500;transition:.2s}
+.sk:hover,.sk.on{background:var(--acc);color:var(--on);border-color:var(--acc)}
+#skn{font:500 14px var(--mono);color:var(--mute);margin-top:14px;min-height:22px}
+h2{text-transform:uppercase;letter-spacing:-.02em}
+.av{width:104px;height:104px;border-radius:50%;border:3px solid var(--card);box-shadow:0 0 0 2px var(--acc);background:var(--acc);color:var(--on);display:grid;place-items:center;font:700 34px var(--sans);overflow:hidden;cursor:pointer;position:relative;flex:none;transition:transform .3s}.av:hover{transform:rotate(-4deg) scale(1.05)}.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.av::after{content:"+ photo";position:absolute;inset:auto 0 0;background:rgba(0,0,0,.55);color:#fff;font:500 10px var(--mono);text-align:center;padding:4px 0;opacity:0;transition:.2s}.av:hover::after{opacity:1}
+.qb button{font:500 11px var(--mono);border:1px solid currentColor;border-radius:99px;padding:3px 11px;margin:10px 6px 0 0;opacity:.85;transition:.2s}.qb button:hover{background:var(--acc);border-color:var(--acc);color:#fff;opacity:1}
+#qo{font:400 12px/1.55 var(--mono);margin:12px 0 0;white-space:pre-wrap;min-height:96px}
+.ab{display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:start}.big{font-size:clamp(26px,4.6vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:500;margin:0}.big span{color:var(--acc)}.ab p{color:var(--mute);font-size:17px;margin:0 0 16px}.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.vals .b{padding:18px;border-radius:22px}.vals b{display:block;font-size:19px;margin:6px 0 4px}.vals span{color:var(--mute);font-size:14px}@media(max-width:760px){.ab,.vals{grid-template-columns:1fr}}
+.abt{font-size:clamp(20px,2.6vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:500;margin:12px 0 10px}.abt span{color:var(--acc)}.abs{font-size:14px;line-height:1.5;opacity:.75;margin:0 0 14px}.clock .tag{border-color:currentColor;opacity:.8}
+.list{border-top:2px solid var(--ink)}
+.li{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:20px 6px;border-bottom:1px solid var(--line);cursor:pointer;transition:.25s;width:100%;text-align:left}
+.li:hover{background:var(--card);padding-left:16px;padding-right:16px}
+.li .i{font:500 12px var(--mono);color:var(--mute)}
+.li h3{margin:0;font-size:clamp(20px,3.4vw,30px);letter-spacing:-.02em;line-height:1.1}
+.li p{margin:5px 0 0;color:var(--mute);font-size:14px;max-width:560px}
+.li .m{text-align:right;font:500 12px var(--mono);color:var(--mute);white-space:nowrap}
+.li .ar{color:var(--acc);display:inline-block;transition:.25s;font-size:16px}.li:hover .ar{transform:translate(4px,-4px)}
+.lh{display:flex;justify-content:space-between;align-items:end;gap:12px}
+@media(max-width:600px){.li{grid-template-columns:30px 1fr}.li .m{grid-column:2;text-align:left;margin-top:-6px}}
+form{display:grid;gap:10px;max-width:560px}
+input,textarea,select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font:inherit}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px}
+.btn{background:var(--acc);color:var(--on);border-radius:99px;padding:14px 22px;font-weight:700}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+footer{margin-top:60px;color:var(--mute);font:400 13px var(--mono)}
+dialog{border:1px solid var(--line);border-radius:28px;background:var(--card);color:var(--ink);max-width:520px;width:calc(100% - 32px);padding:28px}
+dialog::backdrop{background:rgba(10,10,15,.55);backdrop-filter:blur(4px)}
+dialog h3{font-size:30px;margin:6px 0;letter-spacing:-.03em}dialog dt{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-top:14px}dialog dd{margin:2px 0 0}
+#pal{padding:0;max-width:480px;top:14vh;margin-top:0}#pal input{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:18px}
+#pal ul{list-style:none;margin:0;padding:8px;max-height:300px;overflow:auto}
+#pal li{padding:11px 14px;border-radius:12px;cursor:pointer;display:flex;justify-content:space-between}
+#pal li.on{background:var(--acc);color:var(--on)}#pal li small{opacity:.6;font-family:var(--mono)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,80px);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:99px;font:500 13px var(--mono);transition:.3s;z-index:60}.toast.s{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(22px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(max-width:760px){.hero,.clock,.now,.sw,.stat,.go{grid-column:span 6}.hero{min-height:280px}.k{grid-template-columns:1fr}.pill kbd{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="top"><a class="brand" href="./"><i></i>ANGELO.LEBUNA</a><button class="pill" id="open">Search or jump <kbd>⌘K</kbd></button></div>
+
+ <div class="bento">
+  <div class="b hero"><div><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><div class="lbl">Hello, I’m</div><label class="av" id="av" title="Add or change photo">AL<input type="file" accept="image/*" id="pf" hidden></label></div><h1>Angelo<br>Daniel <span>Lebuna.</span></h1></div><div class="role" id="role"></div></div>
+  <div class="b clock"><div class="lbl">About me</div><p class="abt">An aspiring <span>web &amp; software developer</span> turning everyday problems into simple, useful apps.</p><p class="abs">I’m learning to build from the ground up with MySQL and Java, and designing Synced N to help church music teams stay organized. Every project is practice for shipping things that matter.</p><div><span class="tag">Web dev</span><span class="tag">Software dev</span><span class="tag">Databases</span></div></div>
+  <div class="b now"><div class="lbl">Currently learning</div><p>MySQL joins &amp; Java OOP</p><div class="bar"><i></i></div></div>
+  <div class="b sw"><div class="lbl">Pick my accent</div><div class="swr" id="sw"></div><button class="chip" id="th" style="margin-top:14px">Toggle light / dark</button></div>
+  <div class="b stat"><div class="lbl">Projects listed</div><b>03</b></div>
+  <a href="#work" class="b go"><span class="lbl">Explore</span><b>See what I’m building →</b></a>
+ </div>
+
+ <section id="work" class="rv"><h2>Work</h2><p class="sub">Tap a row to open its case file.</p>
+  <div class="chips" id="chips"></div><div class="list" id="pg"></div></section>
+
+ <section id="experience" class="rv"><h2>Experience</h2><p class="sub">Academic and self-directed learning, not paid employment.</p>
+  <div class="list" id="xl"></div></section>
+
+ <section id="skills" class="rv"><h2>Tools</h2><p class="sub">What I use day to day. Tap one for the story.</p>
+  <div class="list" id="tl"></div></section>
+
+ <section id="thoughts" class="rv"><h2>Thoughts</h2><p class="sub">Short notes on what I’m learning.</p>
+  <div class="list" id="th2"></div></section>
+
+ <section id="contact" class="rv"><h2>Say hello</h2><p class="sub">Open to collaboration, advice, and project ideas.</p>
+  <div class="row"><button class="btn" id="cp">Copy email</button><button class="btn o" id="rs">Random fun fact</button></div>
+  <form id="f"><input name="n" placeholder="Your name" required><input name="e" type="email" placeholder="Your email" required>
+   <select name="t"><option>Collaboration</option><option>Project idea</option><option>Just saying hi</option></select>
+   <textarea name="m" rows="4" placeholder="Message" required></textarea><button class="btn" type="submit">Send</button></form></section>
+
+ <footer>© 2026 Angelo Daniel Lebuna · press ⌘K / Ctrl+K anywhere</footer>
+</div>
+
+<dialog id="md"></dialog>
+<dialog id="pal"><input id="q" placeholder="Type a command…" autocomplete="off"><ul id="ls"></ul></dialog>
+<div class="toast" id="ts"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],R=document.documentElement;
+const EMAIL='your@email.com';
+const P=[
+{n:'01',y:'2026',t:'Synced N',c:'software',d:'Church music ministry schedule & lineup system',s:'In progress',
+ pr:'Music teams juggle availability, schedules, and song lineups across chats and spreadsheets.',
+ pl:'A mobile app to centralize availability, assignments, lineups, rehearsal info, and notifications.',st:['Mobile app','Database','UI design']},
+{n:'02',y:'2025',t:'Library Records Database',c:'database',d:'Sample entry: tables for books, members, and loans',s:'Sample',
+ pr:'Tracking who borrowed which book is messy on paper.',pl:'Normalize into books, members, and loans tables, then write join queries for overdue items.',st:['MySQL','SQL']},
+{n:'03',y:'2025',t:'Inventory Console App',c:'academic',d:'Sample entry: Java program built in NetBeans',s:'Sample',
+ pr:'Small shops lose track of stock counts.',pl:'A menu-driven Java program to add, update, and list items using classes and arrays.',st:['Java','NetBeans']}];
+const roles=['student developer','database learner','Java explorer','future app builder'];
+const facts=['I’m building an app for church music teams.','I’m learning MySQL, one query at a time.','I believe good schedules make good teams.'];
+const toast=m=>{const t=$('#ts');t.textContent=m;t.classList.add('s');setTimeout(()=>t.classList.remove('s'),1800)};
+// typing
+let ri=0,ci=0,del=false;(function ty(){const w=roles[ri];$('#role').textContent='→ '+w.slice(0,ci);
+ if(!del&&ci===w.length){del=true;return setTimeout(ty,1400)}if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+ ci+=del?-1:1;setTimeout(ty,del?35:80)})();
+// projects
+const cats=['all','software','database','academic'];
+$('#chips').innerHTML=cats.map((c,i)=>`<button class="chip${i?'':' on'}" data-f="${c}">${c}</button>`).join('');
+const draw=f=>{$('#pg').innerHTML=P.filter(p=>f==='all'||p.c===f).map(p=>`<button class="li" data-n="${p.n}"><span class="i">${p.n}</span><span><h3>${p.t}</h3><p>${p.d}</p></span><span class="m">${p.y} · ${p.s}<br>${p.c} <span class="ar">↗</span></span></button>`).join('');
+ $$('#pg .li').forEach(b=>b.onclick=()=>show(P.find(p=>p.n===b.dataset.n)))};
+$$('#chips .chip').forEach(c=>c.onclick=()=>{$$('#chips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');draw(c.dataset.f)});draw('all');
+function show(p){const m=$('#md');m.innerHTML=`<div class="lbl">Case file ${p.n} · ${p.s}</div><h3>${p.t}</h3><dl><dt>The problem</dt><dd>${p.pr}</dd><dt>The plan</dt><dd>${p.pl}</dd><dt>Built with</dt><dd>${p.st.map(s=>`<span class="tag">${s}</span>`).join('')}</dd></dl><div class="row" style="margin:20px 0 0"><button class="btn" id="x">Close</button></div>`;m.showModal();$('#x').onclick=()=>m.close()}
+$('#md').onclick=e=>{if(e.target.id==='md')e.target.close()};
+// lists
+const X=[['MySQL database work','Designed tables, wrote queries, and practiced relationships in class and self-study.','2025 — Present','Databases'],
+['Java & NetBeans','Built console programs and object-oriented exercises in coursework.','2024 — Present','Programming'],
+['Synced N concept','Researched a church music team’s needs and sketched the app flow.','2026 — Present','Product idea']];
+const L=(arr,fn)=>arr.map((r,i)=>`<button class="li" data-i="${i}"><span class="i">0${i+1}</span><span><h3>${r[0]}</h3><p>${r[1]}</p></span><span class="m">${r[2]}<br>${r[3]||''} <span class="ar">↗</span></span></button>`).join('');
+$('#xl').innerHTML=L(X);
+const T=[['MySQL','Relational database','Where I practice tables, keys, and joins.'],['Java','Programming language','Object-oriented basics and small programs.'],['NetBeans','Java IDE','My editor for coursework.'],['GitHub','Version control & hosting','Where my work and this site live.']];
+$('#tl').innerHTML=T.map((t,i)=>`<button class="li" data-i="${i}"><span class="i">0${i+1}</span><span><h3>${t[0]}</h3></span><span class="m">${t[1]} <span class="ar">↗</span></span></button>`).join('');
+$$('#tl .li').forEach(b=>b.onclick=()=>toast(T[b.dataset.i][2]));
+const N=[['Designing Synced N','Why scheduling a music ministry is harder than it looks, and how an app could help.','Soon','4 min read'],['My first MySQL schema','What I learned about tables, keys, and relationships.','Soon','5 min read'],['Java habits I’m building','Small routines that make practice stick.','Soon','3 min read']];
+$('#th2').innerHTML=L(N);
+$$('#th2 .li').forEach(b=>b.onclick=()=>toast('Full post coming soon'));
+// contact
+$('#cp').onclick=()=>{try{navigator.clipboard.writeText(EMAIL)}catch(e){}toast('Email copied')};
+$('#rs').onclick=()=>toast(facts[Math.floor(Math.random()*facts.length)]);
+$('#f').onsubmit=e=>{e.preventDefault();const d=new FormData(e.target);location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(d.get('t')+' — '+d.get('n'))+'&body='+encodeURIComponent(d.get('m')+'\n\nFrom: '+d.get('e'))};
+// spotlight
+document.addEventListener('pointermove',e=>{const b=e.target.closest&&e.target.closest('.b');if(b){const r=b.getBoundingClientRect();b.style.setProperty('--mx',e.clientX-r.left+'px');b.style.setProperty('--my',e.clientY-r.top+'px')}});
+// profile photo (preview saved in this browser only)
+const setPh=u=>{const a=$('#av');a.querySelector('img')?.remove();const i=new Image();i.alt='Angelo Daniel Lebuna';i.src=u;a.append(i)};
+try{const u=localStorage.getItem('photo');if(u)setPh(u)}catch(e){}
+$('#pf').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),s=Math.min(1,400/Math.min(im.width,im.height)),w=im.width*s,h=im.height*s,m=Math.min(w,h);c.width=c.height=m;c.getContext('2d').drawImage(im,(w-m)/2/s,(h-m)/2/s,m/s,m/s,0,0,m,m);const u=c.toDataURL('image/jpeg',.85);setPh(u);try{localStorage.setItem('photo',u)}catch(x){}toast('Photo updated')};im.src=r.result};r.readAsDataURL(f)};
+const cols=['#5b4bff','#ff6b6b','#0ea5a4','#f59e0b'];
+const setA=(color)=>{const root=R;root.style.setProperty('--acc',color);const sw=$('#sw');if(sw){sw.innerHTML=cols.map(c=>`<button class="dot ${c===color?'on':''}" data-c="${c}" style="background:${c}" aria-label="Accent ${c}"></button>`).join('');$$('#sw .dot').forEach(d=>d.onclick=()=>setA(d.dataset.c));}};
+const flip=()=>{const root=R;const next=root.dataset.theme==='dark'?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('theme',next)}catch(e){} };
+const initTheme=()=>{try{const saved=localStorage.getItem('theme');if(saved){R.dataset.theme=saved;return;}}catch(e){}const system=matchMedia('(prefers-color-scheme: dark)').matches;R.dataset.theme=system?'dark':'light';};
+$('#th').onclick=flip;
+initTheme();
+const savedAccent=(() => { try{return localStorage.getItem('accent') || cols[0]}catch(e){return cols[0]}})();
+setA(savedAccent);try{localStorage.setItem('accent',savedAccent)}catch(e){};
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});$$('.rv').forEach(e=>io.observe(e));
+// command palette
+const A=[['Go to About',()=>scrollTo({top:0,behavior:'smooth'}),'G A'],['Go to Work',()=>location.hash='work','G W'],['Go to Experience',()=>location.hash='experience','G E'],['Go to Tools',()=>location.hash='skills','G T'],['Go to Thoughts',()=>location.hash='thoughts','G H'],['Go to Contact',()=>location.hash='contact','G C'],
+ ['Open Synced N case file',()=>show(P[0]),'↵'],['Toggle light / dark',flip,'T'],['Copy email',()=>$('#cp').click(),'E'],['Random accent',()=>setA(cols[Math.floor(Math.random()*cols.length)]),'A']];
+let sel=0,list=A;const pal=$('#pal');
+const rl=()=>{$('#ls').innerHTML=list.map((a,i)=>`<li class="${i===sel?'on':''}" data-i="${i}">${a[0]}<small>${a[2]}</small></li>`).join('');
+ $$('#ls li').forEach(li=>li.onclick=()=>run(+li.dataset.i))};
+const run=i=>{const a=list[i];if(!a)return;pal.close();setTimeout(a[1],60)};
+const op=()=>{$('#q').value='';list=A;sel=0;rl();pal.showModal();$('#q').focus()};
+$('#open').onclick=op;
+$('#q').oninput=e=>{const v=e.target.value.toLowerCase();list=A.filter(a=>a[0].toLowerCase().includes(v));sel=0;rl()};
+pal.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){sel=Math.min(sel+1,list.length-1);rl();e.preventDefault()}if(e.key==='ArrowUp'){sel=Math.max(sel-1,0);rl();e.preventDefault()}if(e.key==='Enter')run(sel)});
+pal.onclick=e=>{if(e.target.id==='pal')pal.close()};
+addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();pal.open?pal.close():op()}});
+</script>
+</body>
+</html>
